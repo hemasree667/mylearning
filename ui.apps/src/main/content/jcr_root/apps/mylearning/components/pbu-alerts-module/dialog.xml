@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    acsComponentsLimit="1"
+    height="700"
+    title="Alerts Module Component"
+    width="750"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        title="Cards Module Component"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <alerts-config
+                jcr:primaryType="cq:Panel"
+                title="Configuration">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <headline
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Enter text for the alert heading"
+                        fieldLabel="Headline"
+                        name="./txHeadline"
+                        xtype="textfield"/>
+                    <body
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Enter the alert body content"
+                        fieldLabel="Body"
+                        height="150"
+                        name="./txBody"
+                        xtype="textarea"/>
+                    <cta
+                        jcr:primaryType="cq:Widget"
+                        collapsible="true"
+                        itemid="cta"
+                        title="CTA"
+                        xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <link
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Link"
+                                name="./ctaLink"
+                                rootPath="/content/pb"
+                                width="300"
+                                xtype="pathfield"/>
+                            <linkText
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Link Text"
+                                name="./txCtaText"
+                                width="300"
+                                xtype="textfield"/>
+                            <linkTitle
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Link Title"
+                                name="./txCtaTitle"
+                                width="300"
+                                xtype="textfield"/>
+                            <newTab
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in new tab"
+                                name="./ctaNewTab"
+                                type="checkbox"
+                                xtype="selection"/>
+                        </items>
+                    </cta>
+                </items>
+            </alerts-config>
+        </items>
+    </items>
+</jcr:root>

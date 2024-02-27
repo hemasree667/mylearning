@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+	<filter root="/apps/mylearning/clientlibs" />
+	<filter root="/apps/mylearning/components" />
+	<filter root="/apps/mylearning/i18n" />
+</workspaceFilter>

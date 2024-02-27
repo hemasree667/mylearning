@@ -1,0 +1,15 @@
+<sly data-sly-use.clientLib="core/wcm/components/commons/v1/templates/clientlib.html"></sly>
+<<sly data-sly-call="${clientlib.all @ categories='mylearning.base'}"></sly>
+
+<sly data-sly-use.properties="com.hemasree.mylearning.core.models.AlertsModel">
+<sly data-sly-test="${!(properties.valid) && (wcmmode.edit || wcmmode.design)}">
+    <center>Edit Alerts Module Component</center>   
+</sly>
+
+<sly data-sly-test="${properties.valid}">
+            	<h2>${properties.txHeadline} </h2>
+    			<h2>${properties.txBody}</h2>
+				<a href=${properties.txLink} data-sly-attribute.target="${properties.txNewTab ? 'blank' : ''}">${properties.txText} </a>
+</sly>
+				
+
