@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-	xmlns:cq="http://www.day.com/jcr/cq/1.0"
-	xmlns:jcr="http://www.jcp.org/jcr/1.0"
-	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-	jcr:primaryType="cq:Page">
-	<jcr:content
-		cq:template="/conf/mylearning/settings/wcm/templates/page-content"
-		jcr:primaryType="cq:PageContent"
-		sling:resourceType="mylearning/components/page">
-		<root
-			jcr:primaryType="nt:unstructured"
-			sling:resourceType="mylearning/components/container"
-			layout="responsiveGrid">
-			<container
-				jcr:primaryType="nt:unstructured"
-				sling:resourceType="mylearning/components/container"
-				layout="responsiveGrid">
-				<title
-					jcr:primaryType="nt:unstructured"
-					sling:resourceType="mylearning/components/title" />
-				<container
-					jcr:primaryType="nt:unstructured"
-					sling:resourceType="mylearning/components/container"
-					layout="responsiveGrid" />
-			</container>
-		</root>
-	</jcr:content>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/mylearning/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="mylearning/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mylearning/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mylearning/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mylearning/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mylearning/components/container"
+                    layout="responsiveGrid"/>
+            </container>
+            <container_924621331
+                jcr:created="{Date}2024-02-18T21:10:31.441+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2024-02-18T21:13:25.720+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mylearning/components/container"/>
+            <pbu_alerts_module_555096642
+                jcr:created="{Date}2024-02-28T00:24:20.618+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2024-02-28T00:25:43.900+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mylearning/components/pbu-alerts-module"/>
+        </root>
+    </jcr:content>
 </jcr:root>

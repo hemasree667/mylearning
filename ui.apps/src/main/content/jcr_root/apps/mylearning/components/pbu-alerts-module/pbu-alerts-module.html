@@ -7,15 +7,17 @@
             <center>Edit Alerts Module Component</center>
         </div>
     </sly>
+
 	<sly data-sly-test="${alert.valid}">
-        <aside class="pbu-alert parbase">
-        	<div class="pbu-alert__wrap">
-            	<span data-sly-test="${alert.txHeadline}" class="pbu-alert__headline">${alert.txHeadline @ context='html'}</span>
-    			<span data-sly-test="${alert.txBody}" class="pbu-alert__body">${alert.txBody @ context='html'}</span>
-    			<sly data-sly-test="${alert.ctaLink}">
-    				<a class="pbu-alert__cta" href="${alert.ctaLink}"
+		<aside class="pbu-alert parbase">
+			<div class="pbu-alert__wrap">
+				<span data-sly-test="${alert.txHeadline}" class="pbu-alert__headline">${alert.txHeadline @ context='html'}</span>
+				<span data-sly-test="${alert.txBody}" class="pbu-alert__body">${alert.txBody @ context='html'}</span>
+				<sly data-sly-test="${alert.ctaLink}">
+					<a class="pbu-alert__cta" href="${alert.ctaLink}"
 						title="${alert.txCtaTitle ? alert.txCtaTitle : alert.txCtaText}"
-						data-sly-attribute.target="${alert.ctaNewTab ? 'blank' : ''}">${alert.txCtaText}</a>
+						data-sly-attribute.target="${alert.ctaNewTab ? 'blank' : ''}">${alert.txCtaText}
+					</a>
     			</sly>
 			</div>
         </aside>

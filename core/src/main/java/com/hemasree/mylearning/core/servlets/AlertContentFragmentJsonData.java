@@ -30,6 +30,12 @@ import com.google.gson.JsonObject;
 @SuppressWarnings("deprecation")
 public class AlertContentFragmentJsonData extends SlingSafeMethodsServlet {
 
+	public static final String CF_ROOTPATH = "/content/dam/pitneybowes/content-fragment";
+	// public static final String CF_ROOTPATH = "/content/dam/mylearning/contentfragment";
+	public static final String FORWARD_SLASH = "/";
+	public static final String DOT_HTML = ".html";
+	
+
   	private static Logger LOG = LoggerFactory.getLogger(AlertContentFragmentJsonData.class);
     
     @Override
@@ -37,7 +43,7 @@ public class AlertContentFragmentJsonData extends SlingSafeMethodsServlet {
                          SlingHttpServletResponse response) throws IOException {
     	final ResourceResolver resourceResolver = request.getResourceResolver();
     	String[] selectors = request.getRequestPathInfo().getSelectors();
-    	Resource dataResource = resourceResolver.getResource(Constants.CF_ROOTPATH + Constants.FORWARD_SLASH + selectors[0] + Constants.FORWARD_SLASH + selectors[1] + "/alert/jcr:content/data");
+    	Resource dataResource = resourceResolver.getResource(CF_ROOTPATH + FORWARD_SLASH + selectors[0] + FORWARD_SLASH + selectors[1] + "/alert/jcr:content/data");
     	JsonObject resultJson = new JsonObject();
     	JsonArray alertsArray = new JsonArray();
     	if(dataResource != null && dataResource.hasChildren()) {
@@ -78,10 +84,10 @@ public class AlertContentFragmentJsonData extends SlingSafeMethodsServlet {
 
 		if ((arrayEnabledPath != null && arrayEnabledPath.length > 0) && hasContent) {
 			for (int index = 0; index < arrayEnabledPath.length; index++) {
-				if(StringUtils.isNotBlank(arrayEnabledPath[index]) && !StringUtils.equals(arrayEnabledPath[index].trim(), Constants.FORWARD_SLASH)) {
+				if(StringUtils.isNotBlank(arrayEnabledPath[index]) && !StringUtils.equals(arrayEnabledPath[index].trim(), FORWARD_SLASH)) {
 					arrayPaths = true;
-					if (arrayEnabledPath[index].contains(Constants.DOT_HTML)) {
-						arrayEnabledPath[index] = resourceResolver.map(arrayEnabledPath[index].replace(Constants.DOT_HTML, StringUtils.EMPTY)).concat(Constants.DOT_HTML);
+					if (arrayEnabledPath[index].contains(DOT_HTML)) {
+						arrayEnabledPath[index] = resourceResolver.map(arrayEnabledPath[index].replace(DOT_HTML, StringUtils.EMPTY)).concat(DOT_HTML);
 						pageLinkArray.add(arrayEnabledPath[index]);
 					} else {
 						arrayEnabledPath[index] = resourceResolver.map(arrayEnabledPath[index]);

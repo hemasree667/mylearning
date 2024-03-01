@@ -3,6 +3,8 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2024-02-29T13:26:21.494+05:30"
+        cq:lastModifiedBy="admin"
         cq:template="/conf/mylearning/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="mylearning/components/page">
@@ -10,6 +12,21 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="mylearning/components/container"
             layout="responsiveGrid">
+            <pbu_alerts_module
+                jcr:created="{Date}2024-02-29T13:14:49.388+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2024-02-29T13:26:21.485+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mylearning/components/pbu-alerts-module"/>
+            <container_924621331
+                jcr:created="{Date}2024-02-18T21:10:31.441+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2024-02-18T21:12:06.220+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mylearning/components/container"
+                editable="{Boolean}true"/>
             <experiencefragment-header
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="mylearning/components/experiencefragment"
@@ -27,6 +44,13 @@
                     sling:resourceType="mylearning/components/container"
                     editable="{Boolean}true"
                     layout="responsiveGrid"/>
+                <container_1746021681
+                    jcr:created="{Date}2024-02-18T21:10:31.438+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2024-02-18T21:10:31.438+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mylearning/components/container"/>
             </container>
             <experiencefragment-footer
                 jcr:primaryType="nt:unstructured"
