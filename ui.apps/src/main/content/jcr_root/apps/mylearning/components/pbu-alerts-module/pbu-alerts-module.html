@@ -1,5 +1,13 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
 
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+<sly data-sly-call="${clientlib.js @ categories='alert.lib'}" />
+
 <sly data-sly-use.alert="com.hemasree.mylearning.core.models.PbAlertsModel">
 
     <sly data-sly-test="${!(alert.valid) && (wcmmode.edit || wcmmode.design)}">
