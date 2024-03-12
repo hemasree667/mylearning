@@ -1,0 +1,27 @@
+==Release notes_Precision Sans==
+
+Compiler of release notes: Dalton Maag
+Designer: Dalton Maag
+Designer URL: daltonmaag.com
+
+Date of creation: 2014-11-24
+
+Changes since version 1.020:
+- Manually hinted for optimized rasterization.
+
+
+Basic information 
+1 Font name: Precision Sans
+2 TrueType Version record: 1.030
+3 Regional package: Latin
+4 Supported scripts: Latin
+5 Number of glyphs: 242
+6 Weights/Styles: Light, Light Italic, Regular, Italic, Medium, Medium Italic, Bold, Bold Italic
+7 Usage: Text and Display
+
+
+Technology 
+1 Files formats: The files have been delivered in the TrueType-based OpenType format and PostScript-based OpenType format, for use in all major Operating Systems.
+2 Embedding settings: Print and preview of the document is allowed (print and preview mode); subsetting is allowed.
+3 Hinting information: All glyphs are manually hinted for optimized rasterization in Microsoft ClearType or for other LCD devices.
+4 Default numerals: Tabular.

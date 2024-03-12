@@ -35,6 +35,13 @@
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="mylearning/components/pbu-alerts-module"/>
+            <pbu_alerts_module
+                jcr:created="{Date}2024-03-04T17:27:43.769+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2024-03-04T17:28:46.570+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mylearning/components/pbu-alerts-module"/>
         </root>
     </jcr:content>
 </jcr:root>

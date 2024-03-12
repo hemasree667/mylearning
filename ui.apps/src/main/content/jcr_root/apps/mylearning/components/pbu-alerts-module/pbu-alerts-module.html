@@ -5,8 +5,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
+<head>
+	<meta property="og:locale" content="en_us" />
+</head>
 
-<sly data-sly-call="${clientlib.js @ categories='alert.lib'}" />
+<sly data-sly-call="${clientlib.all @ categories='alert.lib'}" />
 
 <sly data-sly-use.alert="com.hemasree.mylearning.core.models.PbAlertsModel">
 

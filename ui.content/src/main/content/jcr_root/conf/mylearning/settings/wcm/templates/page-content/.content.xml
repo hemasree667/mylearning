@@ -2,7 +2,7 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2024-02-29T13:14:49.395+05:30"
+        cq:lastModified="{Date}2024-03-04T17:27:43.777+05:30"
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/mylearning/settings/wcm/template-types/page"
         jcr:description="My Site Page Template"

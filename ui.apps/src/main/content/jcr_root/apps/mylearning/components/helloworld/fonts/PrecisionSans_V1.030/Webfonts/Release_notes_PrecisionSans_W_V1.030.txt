@@ -1,0 +1,36 @@
+==Release notes_Precision Sans W==
+
+Compiler of release notes: Dalton Maag
+Designer: Dalton Maag
+Designer URL: daltonmaag.com
+
+Date of creation: 2014-11-24
+
+Changes since version 1.020:
+- Manually hinted for optimized rasterization.
+
+
+Basic information 
+1 Font name: Precision Sans W
+2 TrueType Version record: 1.030
+3 Regional package: Latin
+4 Supported scripts: Latin
+5 Number of glyphs: 242
+6 Weights/Styles: Light, Light Italic, Regular, Italic, Medium, Medium Italic Bold, Bold Italic
+7 Usage: Text and Display
+
+
+Technology 
+1 Files formats: The files have been delivered in the following formats: TrueType-based OpenType; PostScript-based OpenType; EOT; WOFF; SVG.
+2 Embedding settings: Print and preview of the document is allowed (print and preview mode); subsetting is allowed.
+3 Hinting information: All glyphs are manually hinted for optimized rasterization in Microsoft ClearType or for other LCD devices.
+4 Default numerals: Tabular.
+5 The Embedded OpenType(EOT) font-format works in Microsoft Internet Explorer by including ".eot?#iefix;" to the @font-face CSS rule.
+
+  eg:
+
+  @font-face {
+	  font-family: "Precision Sans W";
+	  src: url(css/type/PrecisionSans_W_Rg.eot?#iefix;) format("embedded-opentype");
+	  }
+  body { font-family: "Precision Sans W", Georgia; }
