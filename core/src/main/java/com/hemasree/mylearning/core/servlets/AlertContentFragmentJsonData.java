@@ -22,7 +22,7 @@ import com.google.gson.JsonObject;
 @Component(
         service = Servlet.class,
         property = {
-                "sling.servlet.paths=/pbservices/alert",
+                "sling.servlet.paths=/cf/alert",
                 "sling.servlet.methods=get",
                 "sling.servlet.extensions=json"
         }
@@ -30,8 +30,7 @@ import com.google.gson.JsonObject;
 @SuppressWarnings("deprecation")
 public class AlertContentFragmentJsonData extends SlingSafeMethodsServlet {
 
-	public static final String CF_ROOTPATH = "/content/dam/pitneybowes/content-fragment";
-	// public static final String CF_ROOTPATH = "/content/dam/mylearning/contentfragment";
+	public static final String CF_ROOTPATH = "/content/dam/mylearning/contentfragment";
 	public static final String FORWARD_SLASH = "/";
 	public static final String DOT_HTML = ".html";
 	

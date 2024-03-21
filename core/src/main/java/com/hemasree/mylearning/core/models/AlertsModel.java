@@ -1,114 +1,129 @@
 package com.hemasree.mylearning.core.models;
 
-import javax.annotation.PostConstruct;
-
+import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.commons.json.JSONException;
+import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.day.cq.wcm.api.Page;
+import javax.annotation.PostConstruct;
+import javax.jcr.Node;
+import javax.jcr.RepositoryException;
+import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * @author Sudhakar Hemasree
+ * 
+ */
+@SuppressWarnings("all")
 @Model(adaptables = Resource.class)
 public class AlertsModel {
+	private final Logger LOG = LoggerFactory.getLogger(getClass());
 
-    private final Logger LOG = LoggerFactory.getLogger(getClass());
+	@SlingObject
+	private ResourceResolver resourceResolver;
 
-    @SlingObject
-    private ResourceResolver resourceResolver;
+	//Config Tab
+	@ValueMapValue(optional = true)
+	private String txHeadline;
 
-    @ValueMapValue(optional = true)
-    private String txHeadline;
+	@ValueMapValue(optional = true)
+	private String txBody;
 
-    @ValueMapValue(optional = true)
-    private String txBody;
+	@ValueMapValue(optional = true)
+	private String ctaLink;
 
-    @ValueMapValue(optional = true)
-    private String txLink;
+	@ValueMapValue(optional = true)
+	private String txCtaText;
 
-    @ValueMapValue(optional = true)
-    private String txText;
+	@ValueMapValue(optional = true)
+	private String txCtaTitle;
 
-    @ValueMapValue(optional = true)
-    private boolean txNewTab;
+	@ValueMapValue(optional = true)
+	private boolean ctaNewTab;
 
-    public String getTxHeadline() {
-        return txHeadline;
-    }
+	public String getTxHeadline() { return txHeadline; }
 
-    public void setTxHeadline(String txHeadline) {
-        this.txHeadline = txHeadline;
-    }
+	public void setTxHeadline(String txHeadline) { this.txHeadline = txHeadline; }
 
-    public String getTxBody() {
-        return txBody;
-    }
+	public String getTxBody() { return txBody; }
 
-    public void setTxBody(String txBody) {
-        this.txBody = txBody;
-    }
+	public void setTxBody(String txBody) { this.txBody = txBody; }
 
-    public String getTxLink() {
-        return txLink;
-    }
+	public String getCtaLink() {
+		return ctaLink;
+	}
 
-    public void setTxLink(String txLink) {
-        this.txLink = txLink;
-    }
+	public void setCtaLink(String ctaLink) {
+		this.ctaLink = ctaLink;
+	}
 
-    public String getTxText() {
-        return txText;
-    }
+	public String getTxCtaText() {
+		return txCtaText;
+	}
 
-    public void setTxText(String txText) {
-        this.txText = txText;
-    }
+	public void setTxCtaText(String txCtaText) {
+		this.txCtaText = txCtaText;
+	}
 
-    public boolean getTxNewTab() {
-        return txNewTab;
-    }
+	public String getTxCtaTitle() {
+		return txCtaTitle;
+	}
 
-    public void setTxNewTab(boolean txNewTab) {
-        this.txNewTab = txNewTab;
-    }
+	public void setTxCtaTitle(String txCtaTitle) {
+		this.txCtaTitle = txCtaTitle;
+	}
 
-    public boolean isValid() {
-        return StringUtils.isNotBlank(txHeadline) ||
-                StringUtils.isNotBlank(txBody) ||
-                StringUtils.isNotBlank(txLink) ||
-                StringUtils.isNotBlank(txText);
-    }
+	public boolean isCtaNewTab() {
+		return ctaNewTab;
+	}
 
-    @PostConstruct
-    protected void init() throws Exception {
-        LOG.info("Start ResourcesModel class init method !");
-        populate();
-    }
+	public void setCtaNewTab(boolean ctaNewTab) {
+		this.ctaNewTab = ctaNewTab;
+	}
 
-    private void populate() {
-        try {
-            // Configured object
-            if (this.isValid()) {
-                if (!txLink.isEmpty()) {
+	public boolean isValid() {
+		return StringUtils.isNotBlank(txHeadline) ||
+				StringUtils.isNotBlank(txBody) ||
+				StringUtils.isNotBlank(ctaLink) ||
+				StringUtils.isNotBlank(txCtaText);
+	}
 
-                    if (txLink.startsWith("/")) {
-                        String link = txLink;
-                        Page page = resourceResolver.resolve(link).adaptTo(Page.class);
-                        link = checkURLByPage(page);
-                        setTxLink(link);
-                    }
-                }
-            }
-        } catch (Exception e) {
-            LOG.error("Exception in Alerts Model", e.getMessage());
-        }
-    }
+	@PostConstruct
+	protected void init() throws JSONException, Exception {
+		LOG.info("Start ResourcesModel class init method !");
+		populate();
+	}
 
-    public static String checkURLByPage(Page page) {
+	private void populate() {
+		try {
+			//Configured object
+			if(this.isValid()) {
+				if (!ctaLink.isEmpty()) {
+
+					if (ctaLink.startsWith("/")) {
+						String link = ctaLink;
+						Page page = resourceResolver.resolve(link).adaptTo(Page.class);
+						link = checkInternalURLByPage(page);
+						setCtaLink(link);
+					}
+				}
+			}
+		} catch (Exception e) {
+			LOG.error("Exception in Alerts Model", e.getMessage());
+		}
+
+	}
+
+    
+    public static String checkInternalURLByPage(Page page) {
         String url = null;
         if (page != null) {
             url = page.getPath();
@@ -121,5 +136,6 @@ public class AlertsModel {
         }
         return url;
     }
+
 
 }

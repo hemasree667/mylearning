@@ -1,0 +1,79 @@
+.global-header[build-version="2024-03-13"] {
+    visibility: visible
+}
+
+.cf-alert {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: .035rem
+}
+
+.cf-alert {
+    background-color: #ffde03;
+    font-weight: 400;
+    color: #454545;
+    overflow: hidden;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: 1.6
+}
+
+.cf-alert__wrap {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1275px
+}
+
+.cf-alert a {
+    outline: none;
+    color: currentColor
+}
+
+.cf-alert a:visited {
+    color: #50248f
+}
+
+.cf-alert a:hover {
+    outline: none;
+    text-decoration: underline;
+    color: currentColor
+}
+
+.cf-alert a:focus {
+    color: #fff;
+    background-color: #454545;
+    padding: .05rem;
+    -webkit-text-decoration-color: #454545;
+    text-decoration-color: #454545
+}
+
+.cf-alert__headline {
+    display: block;
+    font-weight: 500
+}
+
+.cf-alert__body {
+    margin-right: 1rem
+}
+
+.cf-alert__cta {
+    position: relative;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: underline;
+    white-space: nowrap
+}
+
+.cf-alert__cta:after {
+    content: " ➔";
+    text-decoration: underline;
+    -webkit-text-decoration-color: #454545;
+    text-decoration-color: #454545
+}
+
+.cmp-link_screen-reader-only  {
+    display: none;
+}

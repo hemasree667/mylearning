@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Alert Component"
-    sling:resourceType="cq/gui/components/authoring/dialog">
+    jcr:title="Alert Module Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    acsComponentsLimit="1"
+    height="700"
+    width="725">
     <content
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
             <tabs
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Cards module Component"
+                jcr:title="Cards Module Component"
                 sling:resourceType="granite/ui/components/coral/foundation/tabs"
                 maximized="{Boolean}true"
                 type="nav">
                 <items jcr:primaryType="nt:unstructured">
-                    <alert-config
+                    <alerts-config
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Configuration"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -26,42 +29,63 @@
                                     <headline
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter Headline"
+                                        fieldDescription="Enter text for the alert heading"
                                         fieldLabel="Headline"
                                         name="./txHeadline"/>
                                     <body
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                        fieldDescription="Enter the alert body content"
                                         fieldLabel="Body"
+                                        height="150"
                                         name="./txBody"/>
-                                    <link
+                                    <cta
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                        fieldDescription="Enter Link"
-                                        fieldLabel="Link"
-                                        name="./txLink"/>
-                                    <link-text
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldLabel="Link Text"
-                                        name="./txText"/>
-                                    <newTab
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="open in new tab"
-                                        fieldLabel="New Tab"
-                                        name="./txNewTab"
-                                        text="New Tab"
-                                        value="{Boolean}true"/>
-                                    <newTabDelete
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-                                        name="./txnewTabDelete"
-                                        value="{Boolean}true"/>
+                                        jcr:title="CTA"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <columns
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <link
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                        fieldLabel="Link"
+                                                        name="./ctaLink"
+                                                        rootPath="/content/mylearning"/>
+                                                    <linkText
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Link Text"
+                                                        name="./txCtaText"/>
+                                                    <linkTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Link Title"
+                                                        name="./txCtaTitle"/>
+                                                    <newTab
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        fieldDescription="Open in new tab"
+                                                        fieldLabel="New Tab"
+                                                        name="./ctaNewTab"
+                                                        text="New Tab"
+                                                        unCheckedValue="false"
+                                                        value="{Boolean}true"/>
+                                                    <newTab-delete
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                        name="./ctaNewTab@Delete"
+                                                        value="{Boolean}true"/>
+                                                </items>
+                                            </columns>
+                                        </items>
+                                    </cta>
                                 </items>
                             </columns>
                         </items>
-                    </alert-config>
+                    </alerts-config>
                 </items>
             </tabs>
         </items>

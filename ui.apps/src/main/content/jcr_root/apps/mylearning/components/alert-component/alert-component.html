@@ -1,15 +1,36 @@
-<sly data-sly-use.clientLib="core/wcm/components/commons/v1/templates/clientlib.html"></sly>
-<<sly data-sly-call="${clientlib.all @ categories='mylearning.base'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
 
-<sly data-sly-use.properties="com.hemasree.mylearning.core.models.AlertsModel">
-<sly data-sly-test="${!(properties.valid) && (wcmmode.edit || wcmmode.design)}">
-    <center>Edit Alerts Module Component</center>   
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<head>
+	<meta property="og:locale" content="en_us" />
+</head>
+
+<sly data-sly-call="${clientlib.all @ categories='alert.lib'}" />
+
+<sly data-sly-use.alert="com.hemasree.mylearning.core.models.AlertsModel">
+
+    <sly data-sly-test="${!(alert.valid) && (wcmmode.edit || wcmmode.design)}">
+        <div class="cq-text-placeholder-ipe cq-block-sm-placeholder">
+            <center>Edit Alerts Module Component</center>
+        </div>
+    </sly>
+
+	<sly data-sly-test="${alert.valid}">
+		<aside class="cf-alert parbase">
+			<div class="cf-alert__wrap">
+				<span data-sly-test="${alert.txHeadline}" class="cf-alert__headline">${alert.txHeadline @ context='html'}</span>
+				<span data-sly-test="${alert.txBody}" class="cf-alert__body">${alert.txBody @ context='html'}</span>
+				<sly data-sly-test="${alert.ctaLink}">
+					<a class="cf-alert__cta" href="${alert.ctaLink}"
+						title="${alert.txCtaTitle ? alert.txCtaTitle : alert.txCtaText}"
+						data-sly-attribute.target="${alert.ctaNewTab ? 'blank' : ''}">${alert.txCtaText}
+					</a>
+    			</sly>
+			</div>
+        </aside>
+	</sly>
 </sly>
-
-<sly data-sly-test="${properties.valid}">
-            	<h2>${properties.txHeadline} </h2>
-    			<h2>${properties.txBody}</h2>
-				<a href=${properties.txLink} data-sly-attribute.target="${properties.txNewTab ? 'blank' : ''}">${properties.txText} </a>
-</sly>
-				
-
