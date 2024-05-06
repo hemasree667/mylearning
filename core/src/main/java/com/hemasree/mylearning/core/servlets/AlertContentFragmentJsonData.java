@@ -5,7 +5,8 @@ import java.nio.charset.StandardCharsets;
 import javax.servlet.Servlet;
 
 import com.google.gson.Gson;
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 import org.apache.oltu.oauth2.common.OAuth;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -22,16 +23,15 @@ import com.google.gson.JsonObject;
 @Component(
         service = Servlet.class,
         property = {
-                "sling.servlet.paths=/pbservices/alert",
+                "sling.servlet.paths=/ibm-pb-asset/alert",
                 "sling.servlet.methods=get",
                 "sling.servlet.extensions=json"
         }
 )
-@SuppressWarnings("deprecation")
+
 public class AlertContentFragmentJsonData extends SlingSafeMethodsServlet {
 
-	public static final String CF_ROOTPATH = "/content/dam/pitneybowes/content-fragment";
-	// public static final String CF_ROOTPATH = "/content/dam/mylearning/contentfragment";
+	public static final String CF_ROOTPATH = "/content/dam/ibm-pb-asset/content-fragment";
 	public static final String FORWARD_SLASH = "/";
 	public static final String DOT_HTML = ".html";
 	
@@ -101,7 +101,7 @@ public class AlertContentFragmentJsonData extends SlingSafeMethodsServlet {
 					alertProperties.addProperty("headline", headline);
 				}
 				if (StringUtils.isNotBlank(body)) {
-					alertProperties.addProperty("body", body.replace("\n", StringUtils.EMPTY));
+					alertProperties.addProperty("body", body);
 				}
 				if (StringUtils.isNotBlank(link) && StringUtils.isNotBlank(linkText)) {
 					link = resourceResolver.map(link);
